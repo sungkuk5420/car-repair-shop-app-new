@@ -7,19 +7,29 @@
     <q-footer reveal>
       <q-tabs v-model="tab" indicator-color="transparent" active-color="transparent">
         <q-tab class="home" name="home">
-          <img src="statics/images/home_off.png" />
+          <router-link to="/">
+            <img src="statics/images/home_off.png" />
+          </router-link>
         </q-tab>
         <q-tab class="event" name="event">
-          <img src="statics/images/event_off.png" />
+          <router-link to="/event">
+            <img src="statics/images/event_off.png" />
+          </router-link>
         </q-tab>
         <q-tab class="estimate" name="estimate">
-          <img src="statics/images/estimate_off.png" />
+          <router-link to="/estimate">
+            <img src="statics/images/estimate_off.png" />
+          </router-link>
         </q-tab>
         <q-tab class="motores" name="motores">
-          <img src="statics/images/service_center_off.png" />
+          <router-link to="/motores">
+            <img src="statics/images/service_center_off.png" />
+          </router-link>
         </q-tab>
         <q-tab class="mypage" name="mypage">
-          <img src="statics/images/my_off.png" />
+          <router-link to="/mypage">
+            <img src="statics/images/my_off.png" />
+          </router-link>
         </q-tab>
       </q-tabs>
     </q-footer>
