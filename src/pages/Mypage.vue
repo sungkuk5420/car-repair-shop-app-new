@@ -1,7 +1,7 @@
 <template>
   <q-page class="my-page">
     <div class="contents">
-      <div class="myinfo-header">
+      <div class="myinfo-header" @click="$router.go(-1)">
         <div>
           <i class="fas fa-angle-left"></i>
         </div>
@@ -10,7 +10,7 @@
       </div>
       <div class="title">내 정보</div>
       <div class="content">
-        <div class="my-info">
+        <div class="my-info" @click="$router.push('/profile')">
           all new k3
           <input type="button" value="수정" />
         </div>
@@ -100,6 +100,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 60px;
 
   .contents {
     width: 100%;
