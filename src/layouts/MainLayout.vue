@@ -1,45 +1,27 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header bordered class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="left = !left"/>
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>Title
-        </q-toolbar-title>
-
-        <q-btn dense flat round icon="menu" @click="right = !right"/>
-      </q-toolbar>
-
-      <q-tabs align="left">
-        <q-route-tab to="/page1" label="Page One"/>
-        <q-route-tab to="/page2" label="Page Two"/>
-        <q-route-tab to="/page3" label="Page Three"/>
-      </q-tabs>
-    </q-header>
-
-    <q-drawer show-if-above v-model="left" side="left" behavior="desktop" bordered>
-      <!-- drawer content -->
-    </q-drawer>
-
-    <q-drawer show-if-above v-model="right" side="right" behavior="desktop" elevated>
-      <!-- drawer content -->
-    </q-drawer>
-
     <q-page-container>
-      <router-view/>
+      <router-view />
     </q-page-container>
 
-    <q-footer reveal class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-          </q-avatar>Title
-        </q-toolbar-title>
-      </q-toolbar>
+    <q-footer reveal>
+      <q-tabs v-model="tab" indicator-color="transparent" active-color="transparent">
+        <q-tab class="home" name="home">
+          <img src="statics/images/home_off.png" />
+        </q-tab>
+        <q-tab class="event" name="event">
+          <img src="statics/images/event_off.png" />
+        </q-tab>
+        <q-tab class="estimate" name="estimate">
+          <img src="statics/images/estimate_off.png" />
+        </q-tab>
+        <q-tab class="motores" name="motores">
+          <img src="statics/images/service_center_off.png" />
+        </q-tab>
+        <q-tab class="mypage" name="mypage">
+          <img src="statics/images/my_off.png" />
+        </q-tab>
+      </q-tabs>
     </q-footer>
   </q-layout>
 </template>
@@ -48,9 +30,66 @@
 export default {
   data() {
     return {
-      left: false,
-      right: false
+      tab: "home",
     };
-  }
+  },
 };
 </script>
+
+<style lang="scss">
+#q-app .q-footer {
+  background: white;
+  .q-tab {
+    border-top: 1px solid #ddd;
+    width: 20%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    &:not(:last-child) {
+      border-right: 1px solid #ddd;
+    }
+    &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding-bottom: 5px;
+    }
+    &.home {
+      padding-bottom: 6px;
+      img {
+        width: 57%;
+      }
+    }
+
+    &.event {
+      padding-bottom: 4px;
+      img {
+        width: 61%;
+      }
+    }
+    &.estimate {
+      padding-bottom: 4px;
+      img {
+        width: 80%;
+      }
+    }
+
+    &.motores {
+      padding-bottom: 4px;
+      img {
+        width: 60%;
+      }
+    }
+    &.mypage {
+      padding-bottom: 2px;
+      img {
+        width: 97%;
+      }
+    }
+  }
+}
+</style>
