@@ -6,7 +6,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 #q-app .home-page {
   display: flex;
   align-items: center;
