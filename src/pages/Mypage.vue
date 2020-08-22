@@ -1,6 +1,6 @@
 <template>
   <q-page class="my-page">
-    <div class="contents">
+    <div class="contents" v-if="loginUser">
       <div class="myinfo-header" @click="$router.go(-1)">
         <div>
           <i class="fas fa-arrow-left"></i>
@@ -11,7 +11,7 @@
       <div class="title">내 차량</div>
       <div class="content">
         <div class="my-info" @click="$router.push('/profile')">
-          폭스바겐 파사트GT
+          {{loginUser.carType}}
           <input type="button" value="수정" />
         </div>
       </div>
@@ -85,14 +85,17 @@
         </div>
       </div>
 
-      <div class="content login">
-        <div class="login-btn">로그인</div>
+      <div class="row button" @click="logout">
+        <q-btn label="로그아웃" />
       </div>
     </div>
   </q-page>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { T } from "../store/module-example/types";
+import firebase from "firebase";
 export default {
   data() {
     return {
@@ -100,6 +103,40 @@ export default {
       toggle2: false,
       toggle3: false,
     };
+  },
+  computed: {
+    ...mapGetters({
+      sexModalVisiable: "getSexModalVisiable",
+      loginUser: "getLoginUser",
+    }),
+  },
+  mounted() {
+    if (!this.loginUser) {
+      this.$router.push("/login");
+    }
+  },
+  methods: {
+    logout() {
+      const thisObj = this;
+      firebase
+        .auth()
+        .signOut()
+        .then(
+          (res) => {
+            console.log(res);
+
+            this.$store.dispatch(T.SET_LOGIN_USER, {
+              data: {
+                loginUser: null,
+              },
+            });
+            thisObj.$router.push(`/login`);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    },
   },
 };
 </script>
@@ -214,18 +251,18 @@ export default {
       height: 0.65em;
     }
   }
-  .login-btn {
-    height: 50px;
+  .row.button {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #a9a9a9;
-    margin-top: 50px;
-    border-radius: 50px;
-    background-color: #6d00dd;
-    color: white;
-    font-weight: bold;
-    border-bottom: none;
+    margin-top: 20px;
+    padding: 0.25rem 1.5rem;
+    button {
+      width: 100%;
+      font-size: 1rem;
+      color: #fff;
+      background: #585abd;
+      border: 0;
+      padding: 3px 0;
+    }
   }
 }
 </style>

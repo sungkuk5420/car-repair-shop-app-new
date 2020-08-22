@@ -1,7 +1,8 @@
 import { T } from "./types";
 
 export const mutations = {
-  [T.TYPE](state, data) {
-    state.data = data;
+  [T.SET_LOGIN_USER](state, loginUser) {
+    console.log(loginUser)
+    state.loginUser = loginUser;
   }
 };

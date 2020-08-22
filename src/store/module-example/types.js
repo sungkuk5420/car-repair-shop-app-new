@@ -1,3 +1,5 @@
 export const T = {
-  TYPE: "TYPE"
+  SET_LOGIN_USER: "SET_LOGIN_USER",
+  ADD_USER_DATA: "ADD_USER_DATA",
+  GET_USER_DATA: "GET_USER_DATA",
 };

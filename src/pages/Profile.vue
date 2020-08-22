@@ -130,28 +130,11 @@ export default {
       .q-field__control {
         border: 0;
         outline: none;
-        min-height: 0;
-        border-radius: 0;
-      }
-      .q-field__label {
-        top: 16px;
       }
       .q-field__control:before {
         border: 0;
         outline: none;
       }
-      .q-field__control-container {
-        padding-top: 5px;
-      }
-    }
-    .q-field--float .q-field__label.no-pointer-events.absolute.ellipsis {
-      display: none;
-    }
-    .q-field__marginal,
-    .q-field--auto-height .q-field__control,
-    .q-field--auto-height .q-field__native {
-      min-height: 48px;
-      height: 48px;
     }
   }
   .content select {

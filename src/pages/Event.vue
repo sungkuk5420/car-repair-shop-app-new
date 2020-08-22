@@ -52,9 +52,6 @@ export default {
         flex: 1;
         margin-right: 10px;
       }
-      .q-field__control {
-        height: 48px;
-      }
       .q-btn {
         background: #431dad;
         color: white;

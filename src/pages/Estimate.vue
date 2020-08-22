@@ -10,11 +10,13 @@
     <div class="row label">
       <span>차종</span>
     </div>
-    <div class="row content">로그인이 필요합니다.</div>
+    <div class="row content" v-if="!loginUser">로그인이 필요합니다.</div>
+    <div class="row content" v-if="loginUser">{{loginUser.carType}}</div>
     <div class="row label">
       <span>정보</span>
     </div>
-    <div class="row content">로그인이 필요합니다.</div>
+    <div class="row content" v-if="!loginUser">로그인이 필요합니다.</div>
+    <div class="row content" v-if="loginUser">{{loginUser.name}}님 어서오세요!</div>
     <div class="row label">
       <span>선택 요청사항</span>
     </div>
@@ -25,7 +27,7 @@
       <span>요구사항</span>
     </div>
     <div class="row content">
-      <q-input v-model="textarea" filled type="textarea" />
+      <q-input v-model="textarea" outlined type="textarea" rows="4" />
     </div>
     <div class="row label">
       <span>프로모션 참여코드</span>
@@ -41,6 +43,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { T } from "../store/module-example/types";
 export default {
   data() {
     return {
@@ -54,6 +58,11 @@ export default {
       text: "",
       textarea: "",
     };
+  },
+  computed: {
+    ...mapGetters({
+      loginUser: "getLoginUser",
+    }),
   },
 };
 </script>
