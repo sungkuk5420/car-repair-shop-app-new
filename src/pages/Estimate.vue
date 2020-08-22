@@ -74,6 +74,7 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   .top-image {
+    width: 100%;
     position: relative;
     img {
       height: 100%;
