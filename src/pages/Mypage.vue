@@ -3,15 +3,15 @@
     <div class="contents">
       <div class="myinfo-header" @click="$router.go(-1)">
         <div>
-          <i class="fas fa-angle-left"></i>
+          <i class="fas fa-arrow-left"></i>
         </div>
-        <div class="header-text">내 정보</div>
+        <div class="header-text">마이페이지</div>
         <div></div>
       </div>
-      <div class="title">내 정보</div>
+      <div class="title">내 차량</div>
       <div class="content">
         <div class="my-info" @click="$router.push('/profile')">
-          all new k3
+          폭스바겐 파사트GT
           <input type="button" value="수정" />
         </div>
       </div>
@@ -19,7 +19,7 @@
       <div class="title">내 쿠폰</div>
       <div class="content">
         <div class="coupon">
-          내 쿠폰
+          사용가능 쿠폰
           <input type="button" value="3개" />
         </div>
       </div>
@@ -53,7 +53,10 @@
       <div class="title">마케팅 수신 동의</div>
       <div class="content">
         <div class="marketing">
-          <div class="email">이메일</div>
+          <div class="marketing-info">
+            <div class="email">이메일</div>
+            <div class="email-addr">dodongworld@gmail.com</div>
+          </div>
           <div class="toggle">
             <q-toggle v-model="toggle1" />
           </div>
@@ -61,7 +64,10 @@
       </div>
       <div class="content">
         <div class="marketing">
-          <div class="sms">SMS</div>
+          <div class="marketing-info">
+            <div class="sms">SMS</div>
+            <div class="sns-num">01082464444</div>
+          </div>
           <div class="toggle">
             <q-toggle v-model="toggle2" />
           </div>
@@ -69,15 +75,18 @@
       </div>
       <div class="content">
         <div class="marketing">
-          <div class="app-push">앱 푸쉬</div>
+          <div class="marketing-info">
+            <div class="app-push">앱 푸쉬</div>
+            <div class="app-push-msg">내 차 견적 및 이벤트를 앱 알림으로 알려드립니다.</div>
+          </div>
           <div class="toggle">
             <q-toggle v-model="toggle3" />
           </div>
         </div>
       </div>
 
-      <div class="content">
-        <div class="logout-btn">로그아웃</div>
+      <div class="content login">
+        <div class="login-btn">로그인</div>
       </div>
     </div>
   </q-page>
@@ -95,7 +104,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 #q-app .my-page {
   display: flex;
   align-items: center;
@@ -119,24 +128,31 @@ export default {
   }
   .myinfo-header div {
     flex: 1;
-    color: #9e9e9e;
+    color: black;
   }
   .header-text {
     text-align: center;
     font-size: 20px;
-    color: #9e9e9e;
+    color: black;
+    font-weight: bold;
   }
   .title {
     height: 50px;
-    padding: 0 30px 5px 30px;
+    padding: 0 20px 5px 20px;
     display: flex;
     align-items: flex-end;
     font-size: 20px;
-    color: #9e9e9e;
+    color: #585abe;
+    font-weight: bold;
+    border-bottom: 1px solid #cccccc;
   }
   .content {
-    padding: 0 30px;
-    color: #9e9e9e;
+    padding: 0 20px;
+    color: black;
+    border-bottom: 1px solid #cccccc;
+  }
+  .content.login {
+    border-bottom: none;
   }
   .content .my-info,
   .content .coupon {
@@ -144,13 +160,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #a9a9a9;
-    padding: 0 15px;
   }
   .content input {
     border: 0;
     background-color: white;
-    color: #9e9e9e;
+    color: #6d00dd;
   }
   .service-terms,
   .location-service-terms,
@@ -160,17 +174,18 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #a9a9a9;
-    padding: 0 15px;
-    margin-bottom: 10px;
+  }
+  .service-terms i,
+  .location-service-terms i,
+  .privacy i,
+  .service-politics i {
+    color: #cccccc;
   }
   .marketing {
     height: 50px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #a9a9a9;
-    padding: 0 15px;
-    margin-bottom: 10px;
+    padding-top: 10px;
   }
   .email,
   .sms,
@@ -178,6 +193,12 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .email-addr,
+  .sns-num,
+  .app-push-msg {
+    font-size: 12px;
+    color: #cccccc;
   }
   .toggle {
     display: flex;
@@ -193,13 +214,18 @@ export default {
       height: 0.65em;
     }
   }
-  .logout-btn {
+  .login-btn {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #a9a9a9;
     margin-top: 50px;
+    border-radius: 50px;
+    background-color: #6d00dd;
+    color: white;
+    font-weight: bold;
+    border-bottom: none;
   }
 }
 </style>
