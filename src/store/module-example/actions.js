@@ -37,6 +37,10 @@ export const actions = {
     console.log(`store SET_LOGIN_USER [T.ADD_USER_DATA] data`);
     console.log(data);
     ajaxActions.writeUserData(data.user)
-
+  },
+  [T.CHANGE_ACTIVE_TAB]({ commit }, { data }) {
+    console.log(`store SET_LOGIN_USER [T.CHANGE_ACTIVE_TAB] data`);
+    console.log(data);
+    commit(T.CHANGE_ACTIVE_TAB, data.activeTab)
   },
 };
