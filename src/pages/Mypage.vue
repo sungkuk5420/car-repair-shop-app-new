@@ -106,7 +106,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      sexModalVisiable: "getSexModalVisiable",
       loginUser: "getLoginUser",
     }),
   },
