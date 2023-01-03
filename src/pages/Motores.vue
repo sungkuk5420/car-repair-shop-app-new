@@ -10,7 +10,7 @@
     <div class="estimate-ask-btn">견적요청</div>
     <div class="boss-info">
       <div class="boss-image">
-        <img src="../statics/images/default-user-image.jpg" alt />
+        <img src="statics/images/motorImage2.png" alt />
       </div>
       <div class="detail-info">
         <div class="name">이광현 공업사</div>
@@ -18,7 +18,6 @@
         <div class="phone">070 1010 1010</div>
       </div>
     </div>
-    <div class="map">map</div>
     <div class="operation-time">운영시간</div>
     <div class="operation-time-detail">
       월,화,수,목,금 : 09:00 ~ 20:00
@@ -101,14 +100,17 @@ export default {};
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
   .top-image {
     position: relative;
     width: 100%;
+
     img {
       height: 100%;
       width: 100%;
       display: table;
     }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -118,22 +120,26 @@ export default {};
       top: 0;
       bottom: 0;
       margin: auto;
+
       .title,
       .sub-title {
         text-align: center;
         font-weight: 500;
         color: #fff;
       }
+
       .title {
         font-weight: 500;
         font-size: 32px;
         margin-bottom: 10px;
       }
+
       .sub-title {
         font-size: 20px;
       }
     }
   }
+
   .estimate-ask-btn {
     height: 50px;
     width: 100%;
@@ -143,27 +149,33 @@ export default {};
     justify-content: center;
     background-color: #585abe;
   }
+
   .boss-info {
     width: 100%;
     display: flex;
+
     .boss-image {
-      margin: 30px 0 30px 30px;
-      width: 100px;
+      margin: 30px 0 30px 15px;
+      width: 120px;
+
       img {
-        height: 80px;
+        height: 100px;
         border-radius: 50%;
       }
     }
+
     .detail-info {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
+
       .name {
         color: #585abe;
         font-weight: bold;
         font-size: 15px;
       }
+
       .address,
       .phone {
         font-weight: bold;
@@ -171,44 +183,54 @@ export default {};
       }
     }
   }
+
   .map {
     height: 170px;
     width: 100%;
   }
+
   .operation-time,
   .basic-info {
-    padding: 40px 15px 15px 15px;
+    padding: 0px 15px 15px 15px;
     color: #585abe;
     font-weight: bold;
     font-size: 17px;
   }
+
   .operation-time-detail {
     padding: 0 0 15px 15px;
     font-weight: bold;
   }
+
   .basic-info-detail {
     width: 100%;
+
     .row {
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+
       .left {
         padding-left: 20px;
         width: 170px;
+
         i {
           padding-right: 5px;
         }
       }
+
       .right {
         width: 170px;
         display: flex;
         justify-content: flex-start;
+
         i {
           padding-right: 5px;
         }
       }
     }
   }
+
   .review {
     padding: 40px 15px 15px 15px;
     width: 100%;
@@ -217,37 +239,46 @@ export default {};
     color: #585abe;
     font-weight: bold;
     font-size: 17px;
+
     .review-write {
       color: #737373;
       font-size: 13px;
     }
   }
+
   .review-detail {
     .row {
       display: flex;
       justify-content: flex-start;
       margin-bottom: 20px;
+
       .image {
         margin: 0 20px 20px 20px;
+
         img {
           width: 50px;
         }
       }
+
       .detail {
         flex: 1;
+        padding-right: 20px;
       }
     }
   }
+
   .detail .content {
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 15px;
   }
+
   .detail .car-info,
   .detail .write-date {
     font-size: 12px;
     display: flex;
     flex: 1;
+
     div {
       margin: 0 5px;
     }
