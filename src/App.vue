@@ -12,6 +12,22 @@ export default {
 
 
 <style>
+html,
+body {
+  overflow: hidden;
+}
+
+#q-app {
+  overflow: auto;
+  height: 100%;
+
+}
+
+#q-app,
+.q-footer {
+  border: 1px solid #ddd;
+}
+
 #q-app,
 .q-footer,
 .q-header {
