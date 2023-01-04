@@ -1,4 +1,10 @@
 # car-repair-shop-app-new
+부천에 위치한 착한 공업사 고객관리앱 v2입니다.
+
+## Demo / 데모
+
+[라이브 데모 보기](https://car-repair-shop-app.netlify.app/#/)
+
 
 ## 페이지 리스트업
 
@@ -14,7 +20,7 @@
 | 관리자패널               | 김성국 |
 
 
-## 프로젝트 실행방법
+## Getting Started / 어떻게 시작하나요?
 ```
 1.모듈들 설치
 npm install
