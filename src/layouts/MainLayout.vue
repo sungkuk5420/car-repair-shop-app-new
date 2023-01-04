@@ -6,25 +6,25 @@
 
     <q-footer reveal>
       <q-tabs v-model="tab" indicator-color="transparent" active-color="transparent">
-        <q-tab class="home" name @click="function(){changeActiveTab('')}">
-          <img src="statics/images/home_off.png" v-show="activeTab!=''" />
-          <img src="statics/images/home_on.png" v-show="activeTab==''" />
+        <q-tab class="home" name @click="function () { changeActiveTab('') }">
+          <img src="statics/images/home_off.png" v-show="activeTab != ''" />
+          <img src="statics/images/home_on.png" v-show="activeTab == ''" />
         </q-tab>
-        <q-tab class="event" name="event" @click="function(){changeActiveTab('event')}">
-          <img src="statics/images/event_off.png" v-show="activeTab!='event'" />
-          <img src="statics/images/event_on.png" v-show="activeTab=='event'" />
+        <q-tab class="event" name="event" @click="function () { changeActiveTab('event') }">
+          <img src="statics/images/event_off.png" v-show="activeTab != 'event'" />
+          <img src="statics/images/event_on.png" v-show="activeTab == 'event'" />
         </q-tab>
-        <q-tab class="estimate" name="estimate" @click="function(){changeActiveTab('estimate')}">
-          <img src="statics/images/estimate_off.png" v-show="activeTab!='estimate'" />
-          <img src="statics/images/estimate_on.png" v-show="activeTab=='estimate'" />
+        <q-tab class="estimate" name="estimate" @click="function () { changeActiveTab('estimate') }">
+          <img src="statics/images/estimate_off.png" v-show="activeTab != 'estimate'" />
+          <img src="statics/images/estimate_on.png" v-show="activeTab == 'estimate'" />
         </q-tab>
-        <q-tab class="motores" name="motores" @click="function(){changeActiveTab('motores')}">
-          <img src="statics/images/service_center_off.png" v-show="activeTab!='motores'" />
-          <img src="statics/images/service_center_on.png" v-show="activeTab=='motores'" />
+        <q-tab class="motores" name="motores" @click="function () { changeActiveTab('motores') }">
+          <img src="statics/images/service_center_off.png" v-show="activeTab != 'motores'" />
+          <img src="statics/images/service_center_on.png" v-show="activeTab == 'motores'" />
         </q-tab>
-        <q-tab class="mypage" name="mypage" @click="function(){changeActiveTab('mypage')}">
-          <img src="statics/images/my_off.png" v-show="activeTab!='mypage'" />
-          <img src="statics/images/my_on.png" v-show="activeTab=='mypage'" />
+        <q-tab class="mypage" name="mypage" @click="function () { changeActiveTab('mypage') }">
+          <img src="statics/images/my_off.png" v-show="activeTab != 'mypage'" />
+          <img src="statics/images/my_on.png" v-show="activeTab == 'mypage'" />
         </q-tab>
       </q-tabs>
     </q-footer>
@@ -57,6 +57,7 @@ export default {
 <style lang="scss">
 #q-app .q-footer {
   background: white;
+
   .q-tab {
     border-top: 1px solid #ddd;
     width: 20%;
@@ -66,9 +67,11 @@ export default {
     justify-content: center;
     padding-top: 5px;
     padding-bottom: 5px;
+
     &:not(:last-child) {
       border-right: 1px solid #ddd;
     }
+
     &__content {
       display: flex;
       justify-content: center;
@@ -76,36 +79,44 @@ export default {
       flex: 1;
       padding-bottom: 5px;
     }
+
     &.home {
       padding-bottom: 6px;
+
       img {
-        width: 57%;
+        width: 24px;
       }
     }
 
     &.event {
       padding-bottom: 4px;
+
       img {
-        width: 61%;
+        width: 26px;
       }
     }
+
     &.estimate {
       padding-bottom: 4px;
+
       img {
-        width: 80%;
+        width: 33px;
       }
     }
 
     &.motores {
       padding-bottom: 4px;
+
       img {
-        width: 60%;
+        width: 25px;
       }
     }
+
     &.mypage {
       padding-bottom: 2px;
+
       img {
-        width: 97%;
+        width: 40px;
       }
     }
   }

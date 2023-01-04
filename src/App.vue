@@ -28,6 +28,7 @@ body {
   border: 1px solid #ddd;
 }
 
+
 #q-app,
 .q-footer,
 .q-header {
