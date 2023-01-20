@@ -1,29 +1,27 @@
 # car-repair-shop-app-new
 부천에 위치한 착한 공업사 고객관리앱 v2입니다.
 
-## Demo / 데모
+富川に位置する善良な工業社顧客管理アプリv2です。
+## Demo / 데모 / デモサイト
 
-[라이브 데모 보기](https://car-repair-shop-app.netlify.app/#/)
+[Link Open](https://car-repair-shop-app.netlify.app/#/)
 
-## Getting Started / 어떻게 시작하나요?
+## Getting Started / 어떻게 시작하나요? / 始め方
+
+### Installing / 설치 / インストール
 ```
-1.모듈들 설치
 npm install
-
-2.퀘이샤 설치
-npm install quasar-cli
 ```
 
-## License / 라이센스
+### Run / 실행 / 実行
+```
+ quasar dev
+```
+
+## License / 라이센스 /ライセンス
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://gist.github.com/PurpleBooth/LICENSE.md) file for details
 이 프로젝트는 MIT 라이센스로 라이센스가 부여되어 있습니다. 자세한 내용은 LICENSE.md 파일을 참고하세요.
-
-## Acknowledgments / 감사의 말
-
-- Hat tip to anyone whose code was used / 코드를 사용한 모든 사용자들에게 팁
-- Inspiration / 영감
-- etc / 기타
 
 
 ## 페이지 리스트업
